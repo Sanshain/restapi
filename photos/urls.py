@@ -28,6 +28,8 @@ urlpatterns = [
     # url('', include(router.urls)),
     url('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^$', views.index, name='index'),
-    url('articles/', views.ArticleView.as_view()),
+    url('articles/$', views.ArticleView.as_view()),
+    url('articles/(?P<pk>[0-9]+)', views.ArticleView.as_view()),
+    url('article/(?P<pk>[0-9]+)', views.theArticle)
 ]
 
